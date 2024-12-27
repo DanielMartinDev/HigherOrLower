@@ -13,3 +13,7 @@ body {
     background-color: darkgrey;
     border-radius: 10px;
 }
+
+p {
+    font-size: 15px;
+}

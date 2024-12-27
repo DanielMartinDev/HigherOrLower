@@ -3,6 +3,11 @@ const submitButton = document.getElementById("submitButton");
 const guessedWrongText = document.getElementById("guessedWrongText");
 const replayButton = document.getElementById("replayButton");
 
+const easyButton = document.getElementById("easyButton");
+const mediumButton = document.getElementById("mediumButton");
+const hardButton = document.getElementById("hardButton");
+let computersNumber = 0;
+
 // Timer function used when hiding/showing correct/wrong guess text with seconds shown passed in as param
 const timer = (seconds) => {
   var timer = setInterval(function () {
@@ -19,7 +24,6 @@ const randomNumber = (multiplier) => {
   return Math.floor(Math.random() * multiplier);
 }
 
-const computersNumber = randomNumber(10);
 guessedWrongText.hidden = true;
 replayButton.hidden = true;
 
@@ -51,4 +55,16 @@ submitButton.onclick = () =>
 
 replayButton.onclick = () =>  {
   document.location = "./index.html";
+}
+
+easyButton.onclick = () => {
+  computersNumber = randomNumber(10);
+}
+
+mediumButton.onclick = () => {
+  computersNumber = randomNumber(20);
+}
+
+hardButton.onclick = () => {
+  computersNumber = randomNumber(30);
 }
