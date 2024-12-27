@@ -7,14 +7,24 @@
     <body>
         <h1> Welcome to Higher or lower! <h1>
 
-        <p> Select your difficulty below - </p>
         <section id="difficultySettings">
-            <button id="easyButton"> Easy </button>
-            <button id="mediumButton"> Medium </button>
-            <button id="hardButton"> Hard </button>
+            <p> Select your difficulty below - </p>
+
+            <div class="button-wrapper">
+                <button id="easyButton"> Easy </button>
+                <p> numbers from 1-10</p>
+            </div>
+            <div class="button-wrapper">
+                <button id="mediumButton"> Medium </button>
+                <p> numbers from 1-20</p>
+            </div>
+            <div class="button-wrapper">
+                <button id="hardButton"> Hard </button>
+                <p> numbers from 1-30</p>
+            </div>
         </section>
 
-        <section class="mainSection">
+        <section id="mainSection">
             <label> Enter your guess below </label> <br>
             <input id="guessValue" type="text" value=" "> <br>
             <input id="submitButton" type="button" value="Submit Guess"> <br>

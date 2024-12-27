@@ -2,6 +2,8 @@ const usersGuess = document.getElementById("guessValue");
 const submitButton = document.getElementById("submitButton");
 const guessedWrongText = document.getElementById("guessedWrongText");
 const replayButton = document.getElementById("replayButton");
+const difficultySettings = document.getElementById("difficultySettings");
+const mainSection = document.getElementById("mainSection");
 
 const easyButton = document.getElementById("easyButton");
 const mediumButton = document.getElementById("mediumButton");
@@ -12,7 +14,9 @@ let computersNumber = 0;
 const timer = (seconds) => {
   var timer = setInterval(function () {
     seconds--;
-    if (seconds < 0) {
+
+    if (seconds < 0)
+    {
       clearInterval(timer);
       guessedWrongText.hidden = true;
     }
@@ -24,6 +28,8 @@ const randomNumber = (multiplier) => {
   return Math.floor(Math.random() * multiplier);
 }
 
+difficultySettings.hidden = false;
+mainSection.hidden = true;
 guessedWrongText.hidden = true;
 replayButton.hidden = true;
 
@@ -48,23 +54,32 @@ const checkUsersGuess = () => {
   }
 }
 
-submitButton.onclick = () =>
+// Button onClick functions
 {
-  checkUsersGuess();
-}
+  submitButton.onclick = () =>
+  {
+    checkUsersGuess();
+  }
 
-replayButton.onclick = () =>  {
-  document.location = "./index.html";
-}
+  replayButton.onclick = () =>  {
+    document.location = "./index.html";
+  }
 
-easyButton.onclick = () => {
-  computersNumber = randomNumber(10);
-}
+  easyButton.onclick = () => {
+    computersNumber = randomNumber(10);
+    difficultySettings.hidden = true;
+    mainSection.hidden = false;
+  }
 
-mediumButton.onclick = () => {
-  computersNumber = randomNumber(20);
-}
+  mediumButton.onclick = () => {
+    computersNumber = randomNumber(20);
+    difficultySettings.hidden = true;
+    mainSection.hidden = false;
+  }
 
-hardButton.onclick = () => {
-  computersNumber = randomNumber(30);
+  hardButton.onclick = () => {
+    computersNumber = randomNumber(30);
+    difficultySettings.hidden = true;
+    mainSection.hidden = false;
+  }
 }
